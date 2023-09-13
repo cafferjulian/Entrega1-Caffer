@@ -14,10 +14,10 @@ function validarAño(año) {
     console.log('¡Ganaste!');
     return true; 
   } else if (año < añoMirtha) {
-    mostrarMensaje('Faltan más años para el año de nacimiento de Mirtha Legrand.');
+    mostrarMensaje('El año de nacimiento de Mirtha Legrand fue después.');
     console.log('Faltan más años.');
   } else {
-    mostrarMensaje('Sobran algunos años para el año de nacimiento de Mirtha Legrand.');
+    mostrarMensaje('El año de nacimiento de Mirtha Legrand fue antes.');
     console.log('Sobran algunos años.');
   }
   return false; 
@@ -28,7 +28,7 @@ function iniciarJuego() {
   let intentos = 6;
 
   while (intentos > 0) {
-    const añoIngresado = parseInt(prompt(`Adivina el año de nacimiento de Mirtha Legrand (1920-1945). \nIntentos: ${intentos}`));
+    const añoIngresado = parseInt(prompt(`Mirtha nació entre el año 1920 y 1945. \nTienes: ${intentos} intentos`));
 
     if (isNaN(añoIngresado)) {
       mostrarMensaje('Por favor, ingresa un número entre 1920 y 1945.');
@@ -47,7 +47,7 @@ function iniciarJuego() {
   }
 
   if (intentos === 0) {
-    mostrarMensaje(`¡Agotaste tus 6 intentos!\nEl año de nacimiento de Mirtha Legrand es ${añoMirtha}.`);
+    mostrarMensaje(`¡Has perdido!\nEl año de nacimiento de Mirtha Legrand es ${añoMirtha}.`);
     console.log('Perdiste :(');
   }
 }
